@@ -1,0 +1,8 @@
+import streamlit as st
+import time
+
+if "last_update" not in st.session_state:
+    st.session_state.last_update = time.time()
+
+def should_refresh():
+    return time.time() - st.session_state.last_update >= 8

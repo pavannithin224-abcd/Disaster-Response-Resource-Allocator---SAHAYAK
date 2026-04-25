@@ -1,0 +1,28 @@
+def get_icon(resource):
+
+    if resource == "Ambulance":
+        return folium.Icon(color="red", icon="plus")
+
+    elif resource == "Fire Force":
+        return folium.Icon(color="orange", icon="fire")
+
+    elif resource == "Police":
+        return folium.Icon(color="blue", icon="shield")
+
+    elif resource == "Food":
+        return folium.Icon(color="green", icon="cutlery")
+
+    elif resource == "Clothes":
+        return folium.Icon(color="purple", icon="shopping-bag")
+
+    elif resource == "Water":
+        return folium.Icon(color="cadetblue", icon="tint")
+
+    elif resource == "Medical Kits":
+        return folium.Icon(color="darkred", icon="medkit")
+
+    elif resource == "Blankets":
+        return folium.Icon(color="darkgreen", icon="bed")
+
+    else:
+        return folium.Icon(color="gray")

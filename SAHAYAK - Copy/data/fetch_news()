@@ -1,0 +1,17 @@
+import requests
+
+def fetch_news():
+    url = "https://api.gdeltproject.org/api/v2/doc/doc"
+
+    params = {
+        "query": "disaster OR flood OR fire OR earthquake",
+        "mode": "ArtList",
+        "format": "json",
+        "maxrecords": 5
+    }
+
+    try:
+        r = requests.get(url, params=params, timeout=5)
+        return r.json().get("articles", [])
+    except:
+        return []

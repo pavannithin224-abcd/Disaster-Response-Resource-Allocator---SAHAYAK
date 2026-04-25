@@ -1,0 +1,5 @@
+[
+  {"id": "AMB1", "type": "ambulance", "lat": 12.97, "lon": 77.59, "status": "available"},
+  {"id": "FIRE1", "type": "fire_truck", "lat": 12.93, "lon": 77.62, "status": "available"},
+  {"id": "RES1", "type": "rescue_team", "lat": 12.91, "lon": 77.64, "status": "available"}
+]

@@ -1,0 +1,14 @@
+streamlit
+transformers
+sentence-transformers
+scikit-learn
+numpy
+folium
+streamlit-folium
+torch
+streamlit
+pandas
+numpy
+folium
+streamlit-folium
+requests

@@ -1,0 +1,43 @@
+def create_vehicles(incident, base):
+    vehicles = []
+
+    for res in incident["resources"]:
+
+        # 🔥 P1 → MORE VEHICLES
+        if incident["priority"] == "P1":
+            count = 3
+        elif incident["priority"] == "P2":
+            count = 2
+        else:
+            count = 1
+
+        for _ in range(count):
+            vehicles.append({
+                "target": [incident["lat"], incident["lon"]],
+                "current": base.copy(),
+                "step_lat": (incident["lat"] - base[0]) / 10,   # ⚡ faster
+                "step_lon": (incident["lon"] - base[1]) / 10,
+                "active": True,
+                "resource": res,
+                "type": "emergency"
+            })
+
+    return vehicles
+
+def create_relief_vehicles(base, incident):
+    items = ["Food", "Clothes", "Water", "Medical Kits", "Blankets"]
+
+    vehicles = []
+
+    for item in items:
+        vehicles.append({
+            "target": [incident["lat"], incident["lon"]],
+            "current": base.copy(),
+            "step_lat": (incident["lat"] - base[0]) / 8,
+            "step_lon": (incident["lon"] - base[1]) / 8,
+            "active": True,
+            "resource": item,
+            "type": "relief"
+        })
+
+    return vehicles

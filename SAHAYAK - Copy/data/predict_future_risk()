@@ -1,0 +1,23 @@
+import random
+
+def predict_future_risk(history_data):
+    """
+    Simple ML-style risk scoring (can later replace with real ML model)
+    """
+
+    if len(history_data) < 5:
+        return {
+            "risk_level": "LOW",
+            "probability": 0.2
+        }
+
+    high_count = sum(1 for d in history_data if d["severity"] == "HIGH")
+
+    prob = min(1.0, high_count / len(history_data) + random.uniform(0, 0.2))
+
+    if prob > 0.7:
+        return {"risk_level": "HIGH", "probability": prob}
+    elif prob > 0.4:
+        return {"risk_level": "MEDIUM", "probability": prob}
+    else:
+        return {"risk_level": "LOW", "probability": prob}
